@@ -1,11 +1,16 @@
 [package]
 name = "mind_sdk_fhe"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Mind Network"]
 description = "Mind Network Rust SDK"
 license = "MIT"
 exclude = ["examples/*", "data/*", "texts/*", "wallet_keys/*"]
+homepage = "https://github.com/mind-network"
+repository = "https://github.com/mind-network/mind-sdk-fhe-rust"
+readme = "README.md"
+keywords = ["fhe", "async"]
+categories = ["cryptography"]
 
 
 [dependencies]
