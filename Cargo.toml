@@ -1,6 +1,6 @@
 [package]
 name = "mind_sdk_fhe"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Mind Network"]
 description = "Mind Network Rust SDK"
