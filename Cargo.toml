@@ -1,0 +1,66 @@
+[package]
+name = "mind_sdk_fhe"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mind Network"]
+description = "Mind Network Rust SDK"
+license = "MIT"
+exclude = ["examples/*", "data/*", "texts/*", "wallet_keys/*"]
+
+
+[dependencies]
+bincode = "1.3.3"
+base64 = "0.22.1"
+itertools = "0.14.0"
+serde = { version="1.0.217", features = ["derive"]}
+serde_json = "1.0.138"
+size = "0.5.0"
+log = "0.4.25"
+function_name = "0.3.0"
+futures = "0.3.31"
+tokio = { version = "1.43.0", features = ["full"] }
+
+
+#[target.'cfg(target_arch = "aarch64")'.dependencies]
+#tfhe = { workspace = true }
+#[target.'cfg(target_arch = "x86_64")'.dependencies]
+#tfhe = { workspace = true }
+#[target.wasm32-unknown-unknown.dependencies]
+#tfhe = { workspace = true }
+
+
+[target.'cfg(target_arch = "aarch64")'.dependencies]
+tfhe = { version = "0.8.3", features = [
+    "boolean",
+    "shortint",
+    "integer",
+    "aarch64-unix",
+    #"experimental-force_fft_algo_dif4",
+], optional = false }
+
+[target.'cfg(target_arch = "x86_64")'.dependencies]
+tfhe = { version = "0.8.3", features = [
+    "boolean",
+    "shortint",
+    "integer",
+    "x86_64-unix",
+    #"experimental-force_fft_algo_dif4",
+], optional = false , default-features = false}
+
+[target.wasm32-unknown-unknown.dependencies]
+tfhe = { version = "0.8.3", features = [
+    "boolean-client-js-wasm-api",
+    "shortint-client-js-wasm-api",
+    "integer-client-js-wasm-api",
+    "high-level-client-js-wasm-api",
+], optional = false , default-features = false}
+
+
+#[features]
+#wasm32 = []
+
+#[build]
+#rustdoc = "rustdoc"  
+
+#[doc]
+#browser = "chromium" 
