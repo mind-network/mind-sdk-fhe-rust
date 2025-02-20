@@ -152,8 +152,6 @@ pub fn test_new_in_memory() {
 
 This project is licensed under the **MIT License**.
 
----
-
 ## **Contact**
 
 For questions or support, please contact [Mind Network Official Channels](https://mindnetwork.xyz/).
