@@ -10,7 +10,7 @@ homepage = "https://github.com/mind-network"
 repository = "https://github.com/mind-network/mind-sdk-fhe-rust"
 readme = "README.md"
 keywords = ["fhe", "async"]
-categories = ["cryptography"]
+categories = ["cryptography", "fhe", "web3", "ai"]
 
 
 [dependencies]
